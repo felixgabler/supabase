@@ -14,9 +14,9 @@ import { Heading } from '~/components/CustomHTMLElements'
 import ReactMarkdown from 'react-markdown'
 
 const RefPageV2 = ({ sections }: { sections: IProcessedCommonItem[] }) => (
-  console.log('所以有些什么', sections),
+  console.log(sections),
   (
-    <MainSkeleton menuId={MenuId.RefJavaScriptV2}>
+    <MainSkeleton menuId={MenuId.Home}>
       <div
         className={cn(
           'w-full max-w-7xl mx-auto',
@@ -25,13 +25,13 @@ const RefPageV2 = ({ sections }: { sections: IProcessedCommonItem[] }) => (
           '@container'
         )}
       >
-        {flattenOnKey<'items', IProcessedCommonItem>('items', sections).map((section, idx) => (
-          <RefSectionSwitch
-            key={'id' in section ? section.id : section.title}
-            section={section}
-            idx={idx}
-          />
-        ))}
+        {/* {flattenOnKey<'items', IProcessedCommonItem>('items', sections).map((section, idx) => (
+        <RefSectionSwitch
+          key={'id' in section ? section.id : section.title}
+          section={section}
+          idx={idx}
+        />
+      ))} */}
       </div>
     </MainSkeleton>
   )
